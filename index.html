@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pen</title>
+  </head>
+  <body>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة الدخول</title>
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        input[type="password"] {
+            width: 80%;
+            padding: 10px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 18px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <h2>🔐 بوابة الدخول</h2>
+        <p>أدخل الرمز السري للانتقال:</p>
+        <input type="password" id="passInput" placeholder="أدخل الأرقام" inputmode="numeric">
+        <br>
+        <button onclick="checkPassword(); return false;">دخول</button>
+        <div id="errorMsg" class="error"></div>
+    </div>
+
+    <script>
+        // ضع هنا كل كلمات المرور التي تريدها أن تكون صحيحة
+        const correctPasswords = ["5432", "1234", "9999", "0000"];
+
+        function checkPassword() {
+            const userInput = document.getElementById("passInput").value;
+            const errorMsg = document.getElementById("errorMsg");
+            
+            // التحقق مما إذا كانت الكلمة المدخلة موجودة في القائمة
+            if (correctPasswords.includes(userInput)) {
+                // الانتقال إلى رابط موقعك مباشرة عند الإجابة الصحيحة
+                window.location.href = "https://steacomp.com.free"; 
+            } else {
+                errorMsg.textContent = "❌ كلمة المرور غير صحيحة، حاول مجدداً.";
+            }
+        }
+    </script>
+
+</body>
+</html>
